@@ -1,0 +1,172 @@
+body {
+    background-color: white 
+}
+
+.game {
+    width: 80px;
+    height: 200px;
+    margin: 0 420px;
+    border-bottom: 1.5px solid #000;
+    transition: all 0.35s linear;
+}
+
+#dino {
+    width: 50px;
+    height: 50px;
+    background: url(../img/trex.png);
+    background-size: 50px 50px;
+    position: relative;
+    top: 150px; 
+}
+
+#cactus {
+    width: 20px;
+    height: 40px;
+    background: url(../img/cactus.png);
+    background-size: 20px 40px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+    animation: cactusMov 2s 0.1s infinite linear;
+    opacity: 0;
+    display: none;
+}
+
+#cactuses {
+    width: 30px;
+    height: 40px;
+    background: url(../img/cactuses.png);
+    background-size: 30px 40px;
+    position: relative;
+    top: 72px;
+    left: 580px;
+    animation: cactusMove 2s 3.3s infinite linear; 
+    opacity: 0;
+    display: none;
+}
+
+#cloud {
+    width: 90px;
+    height: 35px;
+    background: url(../img/cloud.jpg);
+    background-size: 90px 35px;
+    position: relative;
+    top: -90px;
+    left: 10px;
+    animation: cloud 15s 2.5s infinite;
+    opacity: 0;
+    display: none;
+}
+
+@keyframes cloud {
+    0% {
+        left: -10px;
+        opacity: 1;
+    }
+    50% {
+        top: -85px;  
+    }
+    80% {
+        top: -95px;
+        opacity: 1;
+    }
+    100% {
+        left: 510px;
+        opacity: 0;
+    }
+}
+
+@keyframes cactusMove {
+    0% {
+        left: 590px;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 1;
+    }
+}
+
+@keyframes cactusMov {
+    0% {
+        left: 580px;
+        opacity: 1;
+    }
+    100% {
+        left: -20px;
+        opacity: 1;
+    }
+}
+
+.jump {
+    animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+    30% {
+        top: 90px;
+    }
+    50% {
+        top: 70px;
+    }
+    80% {
+        top: 100px;
+    }
+    100% {
+        top: 150px;
+    }
+}
+
+/* Game-over */
+
+.game__over {
+    display: none;
+}
+
+.game__over-container {
+    width: 594px;
+    padding: 100px 20px 73px 20px;
+    background-color: white;
+}
+
+.restart__box {
+    width: 130px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.restart__para {
+    font-size: 18px;
+    color: white;
+}
+
+.restart__btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 32px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.game__over-img {
+    width: 150px;
+    height: 21px;
+}
+
+.restart__btn img {
+    width: 100%;
+    margin-left: 59px;
+    margin-top: 10px;
+    border-radius: 1.5px;
+}
+
+.result__box {
+    font-size: 25px;
+    color: lightslategrey;
+    text-align: center;
+    margin-top: 25px;
+}
