@@ -32,7 +32,7 @@ function jump () {
         elCloud.style.display = 'block';
         elGameBottom.style.width = '600px';
         elGameBottom.style.margin = 'auto';
-    }, 450)
+    }, 470)
 }
 
 let isAlive = setInterval (function () {
