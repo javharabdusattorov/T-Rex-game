@@ -1,13 +1,37 @@
-body {
-    background-color: white 
-}
-
 .game {
     width: 80px;
     height: 200px;
     margin: 0 420px;
     border-bottom: 1.5px solid #000;
     transition: all 0.35s linear;
+}
+
+.number__of-score {
+    position: absolute;
+    left: 67%;
+    top: 20px;
+    width: 100px;   
+}
+
+.score {
+    font-size: 15px;
+    color: rgba(51, 51, 51, 0.931);
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 4px;
+    font-weight: 300;
+    display: none;
+}
+
+.score__active {
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.931);
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 4px;
+    font-weight: 300;
+    display: none;  
+    margin-left: 40px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #dino {
@@ -147,9 +171,8 @@ body {
     border: none;
     background-color: transparent;
     padding: 0;
-    width: 35px;
-    height: 25px;
-    border-radius: 3px;
+    width: 33px;
+    height: 20px;
 }
 
 .game__over-img {
@@ -161,7 +184,7 @@ body {
     width: 100%;
     margin-left: 59px;
     margin-top: 10px;
-    border-radius: 1.5px;
+    border-radius: 4px;
 }
 
 .result__box {

@@ -5,6 +5,8 @@ let elDino = document.getElementById('dino');
 let elCactus = document.getElementById('cactus');
 let elCactuses = document.getElementById('cactuses');
 let elCloud = document.getElementById('cloud');
+let elScore = document.querySelector('.score');
+let elActivS = document.querySelector('.score__active');
 
 // Rastart
 let elBody = document.querySelector('.game__body');
@@ -14,6 +16,7 @@ let elRestart = document.querySelector('.restart__box');
 let elBtn = document.querySelector('.restart__btn');
 let elResultBox = document.querySelector('.result__box');
 
+let score = 0;
 
 document.addEventListener('keydown', function(event) {
     jump();
@@ -25,14 +28,19 @@ function jump () {
     }
 
     setTimeout (function() {
+
+        score++;
+        elScore.innerHTML = `000${score}`;
+        elActivS.innerHTML = `000${score}`;
         elDino.classList.remove('jump');
+        elScore.style.display = 'block';
         elDino.style.display = 'block';
         elCactus.style.display = 'block';
         elCactuses.style.display = 'block';
         elCloud.style.display = 'block';
         elGameBottom.style.width = '600px';
         elGameBottom.style.margin = 'auto';
-    }, 470)
+    }, 470);
 }
 
 let isAlive = setInterval (function () {
@@ -47,6 +55,14 @@ let isAlive = setInterval (function () {
         elCactus.style.display = 'none';
         elCactuses.style.display = 'none'
         elCloud.style.display = 'none';
+
+        elActivS.style.display = 'block';
+        if (score = 1) {
+            elActivS.innerHTML = `000${score}`
+        } else {
+            elActivS.innerHTML = score;
+        }
+        score = 0;
     } 
     // Two
     else if (cactusLeftTwo < 20 && dinoTop >= 150) {
@@ -56,10 +72,20 @@ let isAlive = setInterval (function () {
         elCactus.style.display = 'none';
         elCactuses.style.display = 'none'
         elCloud.style.display = 'none';
+
+        elActivS.style.display = 'block';
+        if (score = 1) {
+            elActivS.innerHTML = `000${score}`
+        } else {
+            elActivS.innerHTML = score;
+        }
+        elScore.style.display = 'none';
+        score = 0;
     }
 }, 10);
 
-elRestart.addEventListener('click', function() {
+// Play Again
+elBtn.addEventListener('click', function() {
     elGameOver.style.display = 'none';
     elDino.style.display = 'block';
     elCactus.style.display = 'block';
@@ -69,6 +95,11 @@ elRestart.addEventListener('click', function() {
     // Style
     elCactus.style.animationDuration = '1.3s';
     elCactuses.style.animationDuration = '1.3s';
-    elCactus.style.animationDelay = '0.1';
-    elCactuses.style.animationDelay = '3.5s';
+    elCactus.style.animationDelay = '0.2s';
+    elCactuses.style.animationDelay = '1s';
+    score++;
 })
+
+
+
+
